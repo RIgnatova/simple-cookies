@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COOKIES</title>
+
+    <style>
+        #cookies-section{
+            text-align: center;
+            font-size: 18px;
+            background-color: #1b9383;
+            color: #fff;
+            padding: 8px 8px;
+        }
+        #accept-btn, #read-instructions-btn{
+            border: none;
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Simple Cookies</h1>
+
+    
+        <div id="cookies-section">
+            <p>This website uses cookies. By clicking "Accept", you consent to the use of cookies. To learn more, click
+                "Read Instructions".</p>
+            <button id="accept-btn">Accept</button>
+            <button id="read-instructions-btn">Read Instructions</button>
+        </div>
+
+        <div id="pdf-container" style="display: none;">
+            <iframe id="pdf-iframe" width="100%" height="500"></iframe>
+            <button id="close-pdf-btn">Close PDF</button>
+        </div>
+   
+
+    <script>
+        document.getElementById("accept-btn").addEventListener("click", function () {
+            document.getElementById("cookies-section").style.display = "none";
+        });
+
+        document.getElementById("read-instructions-btn").addEventListener("click", function () {
+            document.getElementById("pdf-container").style.display = "block";
+            document.getElementById("pdf-iframe").src = "./images/cookies.pdf"; // Replace with the actual file path
+        });
+
+        document.getElementById("close-pdf-btn").addEventListener("click", function () {
+            document.getElementById("pdf-container").style.display = "none";
+            document.getElementById("pdf-iframe").src = "./images/cookies.pdf"; // Clear the iframe source
+        });
+    </script>
+
+</body>
+
+</html>
